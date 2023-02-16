@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+   HomePage({Key? key}) : super(key: key);
 
-  final int x = 0;
+   int x = 14;
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +17,9 @@ class HomePage extends StatelessWidget {
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: (){
-            print('tap');
+            x++;
+            //print('tap');
+            print(x.toString());
           },
           child: Icon(Icons.add),
         ),
