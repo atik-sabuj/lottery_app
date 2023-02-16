@@ -1,3 +1,4 @@
+import 'dart:math';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -8,7 +9,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-
+  Random random = Random();
   int x = 8;
 
   @override
@@ -23,14 +24,35 @@ class _HomePageState extends State<HomePage> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Center(child: Text('Lottery Winning Number is $x')),
-            Text(x > 5 ? 'x is grater than 5' : x.toString()),
+            SizedBox(height: 20,),
+            Container(
+              height: 250,
+              decoration: BoxDecoration(
+                color: Colors.grey.withOpacity(.2),
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.all(15.0),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Icon(Icons.error,
+                      color: Colors.red, size: 35,),
+                    SizedBox(height: 15,),
+                    Text('Better Luck Next Time Your Number is $x\ntry again',
+                      textAlign: TextAlign.center,),
+                  ],
+                ),
+              ),
+            ),
           ],
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: (){
             print('tap');
           },
-          child: Icon(x > 5 ? Icons.place : Icons.refresh),
+          child: Icon(Icons.refresh),
         ),
       ),
     );
