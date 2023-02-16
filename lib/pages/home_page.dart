@@ -8,10 +8,11 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-   int x = 14;
+   int x = 0;
 
   @override
   Widget build(BuildContext context) {
+    print('rebuild');
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
@@ -23,7 +24,9 @@ class _HomePageState extends State<HomePage> {
         floatingActionButton: FloatingActionButton(
           onPressed: (){
             x++;
-            //print('tap');
+            setState(() {
+
+            });
             print(x.toString());
           },
           child: Icon(Icons.add),
