@@ -9,6 +9,8 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
 
+  int x = 4;
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -17,9 +19,18 @@ class _HomePageState extends State<HomePage> {
           title: const Text('Lottery App'),
         ),
         body: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+            Center(child: Text('Lottery Winning Number is $x')),
 
           ],
+        ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: (){
+            print('tap');
+          },
+          child: Icon(Icons.refresh),
         ),
       ),
     );
