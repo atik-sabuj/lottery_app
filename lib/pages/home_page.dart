@@ -9,7 +9,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
 
-  int x = 4;
+  int x = 8;
 
   @override
   Widget build(BuildContext context) {
@@ -23,14 +23,14 @@ class _HomePageState extends State<HomePage> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Center(child: Text('Lottery Winning Number is $x')),
-
+            Text(x > 5 ? 'x is grater than 5' : x.toString()),
           ],
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: (){
             print('tap');
           },
-          child: Icon(Icons.refresh),
+          child: Icon(x > 5 ? Icons.place : Icons.refresh),
         ),
       ),
     );
